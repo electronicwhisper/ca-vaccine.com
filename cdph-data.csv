@@ -1,0 +1,41 @@
+date,region,total_doses_administered
+​2021-01-02,​Region One,169387
+​2021-01-02,​Region Two,​111918
+​2021-01-02,​Region Three,8756
+​2021-01-02,​Region Four,23508
+​2021-01-02,​Region Five,15918
+​2021-01-02,​Region Six,71322
+​2021-01-02,​Unknown,35345
+​2021-01-02,​Total,436154
+​2021-01-03,Region One,179423
+​2021-01-03,​Region Two,​116051
+​2021-01-03,​Region Three,8766
+​2021-01-03,​Region Four,23685
+​2021-01-03,​Region Five,16804
+​2021-01-03,​Region Six,75235
+​2021-01-03,​Unknown,34342
+​2021-01-03,​Total,454306
+​2021-01-04,Region One,180450
+​2021-01-04,​Region Two,​117900
+​2021-01-04,​Region Three,8770
+​2021-01-04,​Region Four,24003
+​2021-01-04,​Region Five,16959
+​2021-01-04,​Region Six,76792
+​2021-01-04,​Unknown,34690
+​2021-01-04,​Total,459564
+​2021-01-07,Region One,226660
+2021-01-07,​Region Two,150583
+2021-01-07,​Region Three,11418
+2021-01-07,Region Four,31708
+2021-01-07,​Region Five,20893
+2021-01-07,Region Six,96005
+2021-01-07,​Unknown,49112
+2021-01-07,​Total,586379
+2021-01-08,Region One,255936
+2021-01-08,​Region Two,165478
+2021-01-08,​Region Three,12849
+2021-01-08,​Region Four,35150
+2021-01-08,​Region Five,23055
+2021-01-08,​Region Six,104021
+2021-01-08,​Unknown,55639
+2021-01-08,Total,652128
