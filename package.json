@@ -1,0 +1,22 @@
+{
+  "name": "ca-vaccine.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/electronicwhisper/ca-vaccine.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/electronicwhisper/ca-vaccine.com/issues"
+  },
+  "homepage": "https://github.com/electronicwhisper/ca-vaccine.com#readme",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
