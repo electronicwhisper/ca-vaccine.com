@@ -5,12 +5,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>California COVID-19 Vaccine Tracker</title>
+  <script src="plotly-latest.min.js"></script>
 </head>
 
 <body>
   <h1>California COVID-19 Vaccine Tracker</h1>
   <h2>California has administered <span id="total-doses"></span> doses as of <span id="date"></span>.
     Up <span id="daily-doses"></span> from the day before.</h2>
+  <div id="chart"></div>
   <script src="d3/d3.js"></script>
   <script src="index.js"></script>
 </body>
