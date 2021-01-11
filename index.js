@@ -44,7 +44,21 @@ const run = async () => {
 
   Plotly.newPlot(
     "chart",
-    [{ x: x, y: y, type: "scatter" }],
+    [
+      {
+        x: x,
+        y: y,
+        marker: {
+          color: "rgb(0, 163, 184)",
+          size: 8,
+          line: {
+            color: "rgb(0, 163, 184)",
+            width: 0.5,
+          },
+        },
+        type: "scatter",
+      },
+    ],
     {
       title: {
         text: "Vaccine Doses Administered in California",
