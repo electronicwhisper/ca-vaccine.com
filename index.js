@@ -20,7 +20,7 @@ const run = async () => {
 
   const recentTotalDate = latestTotalDosesRow.date;
 
-  const formattedRecentTotalDate = d3.timeFormat("%B %e, %Y")(recentTotalDate);
+  const formattedRecentTotalDate = d3.utcFormat("%B %e, %Y")(recentTotalDate);
 
   document.querySelector("#total-doses").innerText = totalDosesAdministered;
 
@@ -36,7 +36,7 @@ const run = async () => {
 
   window.data = data;
 
-  const x = data.map((row) => d3.timeFormat("%Y-%m-%d")(row.date));
+  const x = data.map((row) => d3.utcFormat("%Y-%m-%d")(row.date));
 
   const y = data.map((row) => row.total_doses_administered);
 
@@ -47,10 +47,7 @@ const run = async () => {
     [{ x: x, y: y, type: "scatter" }],
     {
       title: {
-        text: "Total Vaccine Doses Administered in California",
-        font: {
-          size: 20,
-        },
+        text: "Vaccine Doses Administered in California",
         xref: "paper",
         x: 0.05,
       },
@@ -61,9 +58,14 @@ const run = async () => {
         rangemode: "tozero",
         autorange: true,
       },
+      font: {
+        family:
+          "-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+      },
     },
     {
       displayModeBar: false,
+      responsive: true,
     }
   );
 };

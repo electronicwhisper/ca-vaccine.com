@@ -1,0 +1,95 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  color: #555;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  font-size: 14px;
+  line-height: 2.2rem;
+  background-color: #e1f3f3;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+p {
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: #d73faf;
+}
+
+#page-container {
+  flex: 1;
+}
+
+#content {
+  padding: 32px;
+  margin: 0 auto;
+  max-width: 1600px;
+}
+
+.title {
+  font-size: 24px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.sub-title {
+  font-size: 32px;
+  margin: 0;
+  padding-bottom: 24px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 300;
+}
+
+#main-stats {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+#total-doses,
+#date,
+#daily-doses {
+  font-weight: 700;
+  /* color: rgba(0, 0, 0, 0.65); */
+  color: #d73faf;
+}
+
+#top {
+  background-color: #00a3b8;
+  padding: 16px 32px;
+  color: #e1f3f3;
+}
+
+footer {
+  padding: 32px;
+  border-top: 1px solid #555;
+  background-color: #ddd;
+}
+
+footer p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5rem;
+  padding: 8px;
+}
+
+#footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
