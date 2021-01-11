@@ -54,12 +54,15 @@ const run = async () => {
       },
     ],
     {
+      hovermode: "x",
+      hoverdistance: 1000,
       yaxis: {
         tickmode: "linear",
         tick0: 0,
         dtick: 100000,
         rangemode: "tozero",
         autorange: true,
+        hoverformat: ",f",
       },
       font: {
         family:
