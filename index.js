@@ -36,18 +36,12 @@ const run = async () => {
 
   window.data = data;
 
-  const x = data.map((row) => d3.utcFormat("%Y-%m-%d")(row.date));
-
-  const y = data.map((row) => row.total_doses_administered);
-
-  window.x = x;
-
   Plotly.newPlot(
     "chart",
     [
       {
-        x: x,
-        y: y,
+        x: data.map((row) => d3.utcFormat("%Y-%m-%d")(row.date)),
+        y: data.map((row) => row.total_doses_administered),
         marker: {
           color: "rgb(0, 163, 184)",
           size: 8,
@@ -60,11 +54,6 @@ const run = async () => {
       },
     ],
     {
-      title: {
-        text: "Vaccine Doses Administered in California",
-        xref: "paper",
-        x: 0.05,
-      },
       yaxis: {
         tickmode: "linear",
         tick0: 0,
@@ -75,6 +64,13 @@ const run = async () => {
       font: {
         family:
           "-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+      },
+      margin: {
+        l: 50,
+        r: 25,
+        b: 50,
+        t: 25,
+        pad: 4,
       },
     },
     {

@@ -25,6 +25,7 @@ body {
 
 p {
   font-size: 16px;
+  line-height: 2rem;
 }
 
 a {
@@ -52,6 +53,7 @@ a {
   font-size: 32px;
   margin: 0;
   padding-bottom: 24px;
+  line-height: 3rem;
   color: rgba(0, 0, 0, 0.5);
   font-weight: 300;
 }
@@ -74,10 +76,20 @@ a {
   color: #e1f3f3;
 }
 
+#chart-title {
+  background-color: white;
+}
+
+#chart-title p {
+  margin-bottom: 0;
+  margin-left: 50px;
+  padding-top: 25px;
+  font-weight: 600;
+}
+
 footer {
   padding: 32px;
-  border-top: 1px solid #555;
-  background-color: #ddd;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 footer p {
