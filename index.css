@@ -78,16 +78,27 @@ a {
 
 .chart-title p {
   margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 25px;
+  /* padding-left: 50px; */
   font-size: 24px;
   color: rgba(0, 0, 0, 0.65);
-  font-weight: 600;
+  font-weight: 300;
+  background-color: white;
+  text-align: center;
 }
 
 .chart-container-inner {
-  padding-top: 32px;
+  margin-top: 56px;
+}
+
+.chart-container,
+.chart-container-inner {
+  background-color: white;
 }
 
 footer {
+  margin-top: 16px;
   padding: 32px;
   background-color: rgba(0, 0, 0, 0.1);
 }
