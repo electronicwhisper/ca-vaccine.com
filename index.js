@@ -69,9 +69,11 @@ const run = async () => {
     {
       hovermode: "x",
       hoverdistance: 1000,
+      dragmode: false,
       xaxis: {
         type: 'date',
         range: xAxisRange,
+        fixedrange: true,
       },
       yaxis: {
         tickmode: "linear",
@@ -80,6 +82,7 @@ const run = async () => {
         rangemode: "tozero",
         autorange: true,
         hoverformat: ",f",
+        fixedrange: true,
       },
       font: {
         family:
@@ -141,9 +144,11 @@ const run = async () => {
     {
       hovermode: "x",
       hoverdistance: 1000,
+      dragmode: false,
       xaxis: {
         type: 'date',
         range: xAxisRange,
+        fixedrange: true,
       },
       yaxis: {
         tickmode: "linear",
@@ -152,6 +157,7 @@ const run = async () => {
         rangemode: "tozero",
         autorange: true,
         hoverformat: ",f",
+        fixedrange: true,
       },
       font: {
         family:
