@@ -77,15 +77,14 @@ a {
 }
 
 .chart-title p {
-  margin-bottom: 0;
-  margin-left: 50px;
-  padding-top: 25px;
+  margin-top: 0;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.65);
   font-weight: 600;
 }
 
-.chart-container {
-  background-color: white;
-  width: 100%;
+.chart-container-inner {
+  padding-top: 32px;
 }
 
 footer {
