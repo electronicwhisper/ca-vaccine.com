@@ -1,6 +1,14 @@
+const oneDay = 24 * 60 * 60 * 1000; // milliseconds in a day
+
 const addCommasToBigNumber = (num) => {
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
+
+const formatDateForPlotly = (date) => {
+  // Juggling time zone stuff. Still don't really understand this. -Toby
+  const s = d3.utcFormat("%Y-%m-%d")(date);
+  return +d3.timeParse("%Y-%m-%d")(s);
+}
 
 const run = async () => {
   let data = await d3.csv("cdph-data.csv", d3.autoType);
@@ -36,11 +44,16 @@ const run = async () => {
 
   window.data = data;
 
+  const datePadding = oneDay / 2;
+  const startDate = formatDateForPlotly(data[0].date);
+  const endDate = formatDateForPlotly(data[data.length - 1].date);
+  const xAxisRange = [startDate - datePadding, endDate + datePadding];
+
   Plotly.newPlot(
     "chart",
     [
       {
-        x: data.map((row) => d3.utcFormat("%Y-%m-%d")(row.date)),
+        x: data.map((row) => formatDateForPlotly(row.date)),
         y: data.map((row) => row.total_doses_administered),
         marker: {
           color: "rgb(0, 163, 184)",
@@ -56,6 +69,10 @@ const run = async () => {
     {
       hovermode: "x",
       hoverdistance: 1000,
+      xaxis: {
+        type: 'date',
+        range: xAxisRange,
+      },
       yaxis: {
         tickmode: "linear",
         tick0: 0,
@@ -90,11 +107,10 @@ const run = async () => {
     const previousRow = data[i - 1];
 
     // divide by num of days between row and previous row
-    const oneDay = 24 * 60 * 60 * 1000; // milliseconds in a day
     const daysBetween = Math.round((row.date - previousRow.date) / oneDay);
 
     console.log(daysBetween);
-    x.push(d3.utcFormat("%Y-%m-%d")(row.date));
+    x.push(formatDateForPlotly(row.date));
 
     y.push(
       (row.total_doses_administered - previousRow.total_doses_administered) /
@@ -125,10 +141,14 @@ const run = async () => {
     {
       hovermode: "x",
       hoverdistance: 1000,
+      xaxis: {
+        type: 'date',
+        range: xAxisRange,
+      },
       yaxis: {
         tickmode: "linear",
         tick0: 0,
-        dtick: 100000,
+        dtick: 10000,
         rangemode: "tozero",
         autorange: true,
         hoverformat: ",f",
