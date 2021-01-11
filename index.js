@@ -81,6 +81,75 @@ const run = async () => {
       responsive: true,
     }
   );
+
+  const x = [];
+  const y = [];
+
+  for (let i = 1; i < data.length; i++) {
+    const row = data[i];
+    const previousRow = data[i - 1];
+
+    // divide by num of days between row and previous row
+    const oneDay = 24 * 60 * 60 * 1000; // milliseconds in a day
+    const daysBetween = Math.round((row.date - previousRow.date) / oneDay);
+
+    console.log(daysBetween);
+    x.push(d3.utcFormat("%Y-%m-%d")(row.date));
+
+    y.push(
+      (row.total_doses_administered - previousRow.total_doses_administered) /
+        daysBetween
+    );
+  }
+
+  console.log(x);
+  console.log(y);
+
+  Plotly.newPlot(
+    "chart-2",
+    [
+      {
+        x: x,
+        y: y,
+        marker: {
+          color: "rgb(0, 163, 184)",
+          size: 8,
+          line: {
+            color: "rgb(0, 163, 184)",
+            width: 0.5,
+          },
+        },
+        type: "scatter",
+      },
+    ],
+    {
+      hovermode: "x",
+      hoverdistance: 1000,
+      yaxis: {
+        tickmode: "linear",
+        tick0: 0,
+        dtick: 100000,
+        rangemode: "tozero",
+        autorange: true,
+        hoverformat: ",f",
+      },
+      font: {
+        family:
+          "-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+      },
+      margin: {
+        l: 50,
+        r: 25,
+        b: 50,
+        t: 25,
+        pad: 4,
+      },
+    },
+    {
+      displayModeBar: false,
+      responsive: true,
+    }
+  );
 };
 
 run();

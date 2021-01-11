@@ -76,15 +76,16 @@ a {
   color: #e1f3f3;
 }
 
-#chart-title {
-  background-color: white;
-}
-
-#chart-title p {
+.chart-title p {
   margin-bottom: 0;
   margin-left: 50px;
   padding-top: 25px;
   font-weight: 600;
+}
+
+.chart-container {
+  background-color: white;
+  width: 100%;
 }
 
 footer {
