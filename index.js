@@ -8,7 +8,7 @@ const formatDateForPlotly = (date) => {
   // Juggling time zone stuff. Still don't really understand this. -Toby
   const s = d3.utcFormat("%Y-%m-%d")(date);
   return +d3.timeParse("%Y-%m-%d")(s);
-}
+};
 
 const run = async () => {
   let data = await d3.csv("cdph-data.csv", d3.autoType);
@@ -71,7 +71,7 @@ const run = async () => {
       hoverdistance: 1000,
       dragmode: false,
       xaxis: {
-        type: 'date',
+        type: "date",
         range: xAxisRange,
         fixedrange: true,
       },
@@ -146,7 +146,7 @@ const run = async () => {
       hoverdistance: 1000,
       dragmode: false,
       xaxis: {
-        type: 'date',
+        type: "date",
         range: xAxisRange,
         fixedrange: true,
       },
