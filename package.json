@@ -18,5 +18,9 @@
   "homepage": "https://github.com/electronicwhisper/ca-vaccine.com#readme",
   "devDependencies": {
     "live-server": "^1.2.1"
+  },
+  "dependencies": {
+    "got": "^11.8.1",
+    "jsdom": "^16.4.0"
   }
 }
