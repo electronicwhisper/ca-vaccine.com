@@ -9,32 +9,32 @@ const palette = [
 
 const regionInfo = {
   region_one: {
-    name: "Region One",
+    name: "Region 1",
     color: palette[0],
     population: 14790415,
   },
   region_two: {
-    name: "Region Two",
+    name: "Region 2",
     color: palette[1],
     population: 8823965,
   },
   region_three: {
-    name: "Region Three",
+    name: "Region 3",
     color: palette[2],
     population: 806979,
   },
   region_four: {
-    name: "Region Four",
+    name: "Region 4",
     color: palette[3],
     population: 3917557,
   },
   region_five: {
-    name: "Region Five",
+    name: "Region 5",
     color: palette[4],
     population: 2970648,
   },
   region_six: {
-    name: "Region Six",
+    name: "Region 6",
     color: palette[5],
     population: 8202659,
   },
