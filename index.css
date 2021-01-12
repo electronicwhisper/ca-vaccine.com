@@ -29,7 +29,20 @@ p {
 
 a {
   text-decoration: none;
-  color: #d73faf;
+  color: #00a3b8;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #df59bc;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
 }
 
 #page-container {
@@ -51,10 +64,6 @@ a {
   padding: 32px;
   margin: 0 auto;
   max-width: 1600px;
-}
-
-.region {
-  margin-bottom: 96px;
 }
 
 .headline {
@@ -79,9 +88,8 @@ a {
   background-color: white;
 }
 .chart-title {
-  margin-top: 0;
-  margin-bottom: 0;
   padding-top: 24px;
+  margin: 0 8px;
   font-size: 24px;
   color: rgba(0, 0, 0, 0.65);
   font-weight: 300;
@@ -95,10 +103,57 @@ a {
   font-style: italic;
 }
 
+#map-and-region-list {
+  display: flex;
+  align-items: flex-start;
+  padding: 50px;
+  justify-content: space-around;
+}
+
+#map img {
+  max-width: 350px;
+  padding-right: 50px;
+}
+
+#region-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  row-gap: 32px;
+  column-gap: 32px;
+}
+
+#region-list-container h2 {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 300;
+  margin-top: 0;
+  padding-bottom: 32px;
+}
+
+#region-list h3 {
+  margin-top: 0;
+  margin-bottom: 0px;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 500;
+}
+
+#region-list h4 {
+  color: rgba(0, 0, 0, 0.5);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+#region-list p {
+  margin: 0;
+}
+
+.region {
+  justify-content: space-evenly;
+}
+
 footer {
   margin-top: 16px;
   padding: 32px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.08);
 }
 
 footer p {
@@ -111,4 +166,70 @@ footer p {
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
+}
+
+@media only screen and (max-width: 1024px) {
+  #region-list {
+    row-gap: 16px;
+    column-gap: 30px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #top,
+  #content,
+  #map-and-region-list {
+    padding: 16px;
+  }
+  #map-and-region-list {
+    display: block;
+    margin: 0 auto;
+  }
+  #map {
+    text-align: center;
+  }
+  #map img {
+    padding: 0;
+  }
+  #region-list-container h2 {
+    padding-top: 32px;
+  }
+  #region-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    row-gap: 32px;
+    column-gap: 156px;
+    justify-content: space-between;
+  }
+  .sub-title {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #top,
+  #content,
+  #map-and-region-list {
+    padding: 8px;
+  }
+  #map img {
+    max-width: 200px;
+  }
+  #region-list {
+    row-gap: 16px;
+    column-gap: 110px;
+  }
+  #region-list-container {
+    padding: 8px;
+  }
+  .sub-title {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  #region-list {
+    row-gap: 16px;
+    column-gap: 86px;
+  }
 }
