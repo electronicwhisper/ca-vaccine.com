@@ -1,10 +1,10 @@
 const palette = [
-  "#7678cc",
-  "#70a845",
-  "#c35ca4",
-  "#4aad92",
-  "#cb584d",
-  "#b78f40",
+  "#18AFCC",
+  "#12008A",
+  "#C300A4",
+  "#00AD00",
+  "#9A5CFE",
+  "#B7A033",
 ];
 
 const regionInfo = {

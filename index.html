@@ -1,139 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>California COVID-19 Vaccine Tracker</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="plotly-latest.min.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>California COVID-19 Vaccine Tracker</title>
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="index.css" />
-  <script src="plotly-latest.min.js"></script>
-</head>
-
-<body>
-  <div id="page-container">
-    <div id="top">
-      <p class="title">
-        California Coronavirus (COVID-19) Vaccination Tracker
-      </p>
-    </div>
-    <div id="content">
-      <!-- Region Total -->
-      <div class="region" id="region-total">
-        <div class="headline">
-          <p class="sub-title">
-            <span class="region-name">California</span> has administered <span class="cumulative"></span> doses
-            as of <span class="date"></span>.
-          </p>
-          <p class="sub-title">
-            Daily rate: <span class="daily-rate"></span> new doses per day.
-          </p>
-        </div>
-
-        <div class="chart-container">
-          <div class="chart-title">
-            Cumulative COVID-19 vaccination doses administered in California
+  <body>
+    <div id="page-container">
+      <div id="top">
+        <p class="title">
+          California Coronavirus (COVID-19) Vaccination Tracker
+        </p>
+      </div>
+      <div id="content">
+        <!-- Region Total -->
+        <div class="region" id="region-total">
+          <div class="headline">
+            <p class="sub-title">
+              <span class="region-name">California</span> has administered
+              <span class="cumulative"></span> doses as of
+              <span class="date"></span>.
+            </p>
+            <p class="sub-title">
+              Daily rate: <span class="daily-rate"></span> new doses per day.
+            </p>
           </div>
-          <div class="chart-cumulative"></div>
-        </div>
-        <div class="chart-disclaimer">
-          This data counts single doses and may not equal the total number of
-          people vaccinated as current regimens require two doses.
-        </div>
 
-        <div class="chart-container">
-          <div class="chart-title">
-            Daily rate of new COVID-19 vaccination doses administered in
-            California
+          <div class="chart-container">
+            <div class="chart-title">
+              Cumulative COVID-19 vaccination doses administered in California
+            </div>
+            <div class="chart-cumulative"></div>
           </div>
-          <div class="chart-daily-rate"></div>
-        </div>
-        <div class="chart-disclaimer">
-          The daily rate has been averaged for days that were missing data.
-        </div>
+          <div class="chart-disclaimer">
+            This data counts single doses and may not equal the total number of
+            people vaccinated as current regimens require two doses.
+          </div>
 
-        <div class="chart-container">
-          <div class="chart-title">
-            Cumulative COVID-19 vaccination doses per 100 people by region
+          <div class="chart-container">
+            <div class="chart-title">
+              Daily rate of new COVID-19 vaccination doses administered in
+              California
+            </div>
+            <div class="chart-daily-rate"></div>
           </div>
-          <div class="chart-regions"></div>
+          <div class="chart-disclaimer">
+            The daily rate has been averaged for days that were missing data.
+          </div>
+
+          <div class="chart-container">
+            <div class="chart-title">
+              Cumulative COVID-19 vaccination doses per 100 people by region
+            </div>
+            <div class="chart-regions"></div>
+            <div style="display: flex; align-items: flex-start">
+              <img
+                src="regions_with_numbers.png"
+                width="400"
+                style="padding: 16px"
+              />
+              <div>
+                <h3>Region 1</h3>
+                <p>
+                  <a
+                    href="http://publichealth.lacounty.gov/media/coronavirus/vaccine/"
+                    >Los Angeles</a
+                  >,
+                  <a
+                    href="https://occovid19.ochealthinfo.com/covid-19-vaccine-resources"
+                    >Orange</a
+                  >,
+                  <a href="https://www.emergencyslo.org/en/vaccines.aspx"
+                    >San Luis Obispo</a
+                  >,
+                  <a href="https://publichealthsbc.org/vaccine/"
+                    >Santa Barbara</a
+                  >,
+                  <a
+                    href="https://www.venturacountyrecovers.org/vaccine-information/"
+                    >Ventura</a
+                  >
+                </p>
+                <h3>Region 2</h3>
+                <p>
+                  <a href="https://covid-19.acgov.org/vaccines">Alameda</a>,
+                  <a href="https://www.coronavirus.cchealth.org/vaccine"
+                    >Contra Costa</a
+                  >,
+                  <a href="https://www.covid19.dnco.org/vaccines">Del Norte</a>,
+                  <a href="https://humboldtgov.org/2872/Vaccine-Info"
+                    >Humboldt</a
+                  >,
+                  <a href="http://health.co.lake.ca.us/Coronavirus/Vaccines.htm"
+                    >Lake</a
+                  >,
+                  <a href="https://coronavirus.marinhhs.org/vaccine">Marin</a>,
+                  <a
+                    href="https://www.mendocinocounty.org/community/novel-coronavirus"
+                    >Mendocino</a
+                  >,
+                  <a
+                    href="https://www.co.monterey.ca.us/government/departments-a-h/health/diseases/2019-novel-coronavirus-covid-19/2019-novel-coronavirus-covid-19-vaccines"
+                    >Monterey</a
+                  >,
+                  <a href="https://www.countyofnapa.org/3096/COVID-19-Vaccines"
+                    >Napa</a
+                  >,
+                  <a href="https://hhsa.cosb.us/covid-19-vaccine-info/"
+                    >San Benito</a
+                  >,
+                  <a href="https://sf.gov/covid-19-vaccine-san-francisco"
+                    >San Francisco</a
+                  >,
+                  <a href="https://www.smchealth.org/covid-19-vaccination"
+                    >San Mateo</a
+                  >,
+                  <a
+                    href="https://www.sccgov.org/sites/covid19/Pages/COVID19-vaccine-information-for-public.aspx"
+                    >Santa Clara</a
+                  >,
+                  <a
+                    href="https://www.santacruzhealth.org/HSAHome/HSADivisions/PublicHealth/CommunicableDiseaseControl/CoronavirusHome/Vaccine.aspx"
+                    >Santa Cruz</a
+                  >,
+                  <a
+                    href="https://www.solanocounty.com/depts/ph/coronavirus_links/covid_19_vaccines.asp"
+                    >Solano</a
+                  >,
+                  <a
+                    href="https://socoemergency.org/emergency/novel-coronavirus/vaccine-information/"
+                    >Sonoma</a
+                  >
+                </p>
+                <h3>Region 3</h3>
+                <p>
+                  <a href="https://www.buttecounty.net/ph/COVID19/vaccine"
+                    >Butte</a
+                  >,
+                  <a href="https://www.countyofcolusa.org/949/Vaccine">Colusa</a
+                  >,
+                  <a
+                    href="https://www.countyofglenn.net/dept/health-human-services/public-health/covid-19/covid-19-vaccine-information"
+                    >Glenn</a
+                  >,
+                  <a href="https://lassencares.org/flu-%26-covid19-vaccination"
+                    >Lassen</a
+                  >,
+                  <a href="https://modochealthservices.org/corona-virus"
+                    >Modoc</a
+                  >,
+                  <a href="https://www.plumascounty.us/2749/COVID-19-Vaccine"
+                    >Plumas</a
+                  >,
+                  <a
+                    href="https://www.co.shasta.ca.us/ready/covid-19/vaccinations"
+                    >Shasta</a
+                  >,
+                  <a
+                    href="https://sierracounty.ca.gov/616/About-Vaccine-for-COVID-19"
+                    >Sierra</a
+                  >,
+                  <a
+                    href="https://www.co.siskiyou.ca.us/publichealth/page/covid-19-vaccine-information"
+                    >Siskiyou</a
+                  >,
+                  <a
+                    href="https://www.suttercounty.org/doc/government/depts/cao/em/coronavirus/coronavirusvaccine"
+                    >Sutter</a
+                  >,
+                  <a
+                    href="https://www.tehamacohealthservices.net/covid-19-vaccine-information/"
+                    >Tehama</a
+                  >,
+                  <a href="https://www.trinitycounty.org/COVID19-Vaccine"
+                    >Trinity</a
+                  >,
+                  <a href="https://www.yuba.org/coronavirus/vaccines.php"
+                    >Yuba</a
+                  >
+                </p>
+                <h3>Region 4</h3>
+                <p>
+                  <a href="https://alpinecountyca.gov/516/COVID-19">Alpine</a>,
+                  <a
+                    href="https://www.amadorgov.org/services/public-health/covid-19/vaccine-information"
+                    >Amador</a
+                  >, <a href="https://covid19.calaverasgov.us/">Calaveras</a>,
+                  <a
+                    href="https://www.edcgov.us/Government/hhsa/edccovid-19-vaccine"
+                    >El Dorado</a
+                  >,
+                  <a
+                    href="https://www.mynevadacounty.com/3148/Get-Vaccine-Information"
+                    >Nevada</a
+                  >,
+                  <a href="https://www.placer.ca.gov/6996/Vaccine">Placer</a>,
+                  <a
+                    href="https://www.saccounty.net/COVID-19/Pages/CoronavirusVaccine.aspx"
+                    >Sacramento</a
+                  >,
+                  <a href="http://www.sjcphs.org/covid19/COVID19_Vaccine.aspx"
+                    >San Joaquin</a
+                  >,
+                  <a href="http://schsa.org/coronavirus/vaccine/">Stanislaus</a
+                  >,
+                  <a
+                    href="https://www.tuolumnecounty.ca.gov/1319/About-the-COVID-19-Vaccine"
+                    >Tuolumne</a
+                  >,
+                  <a
+                    href="https://www.yolocounty.org/health-human-services/adults/communicable-disease-investigation-and-control/novel-coronavirus-2019/coronavirus-vaccine"
+                    >Yolo</a
+                  >
+                </p>
+                <h3>Region 5</h3>
+                <p>
+                  <a
+                    href="https://www.co.fresno.ca.us/departments/public-health/covid-19/covid-19-vaccines"
+                    >Fresno</a
+                  >,
+                  <a href="https://kernpublichealth.com/coronavirus-vaccine/"
+                    >Kern</a
+                  >,
+                  <a
+                    href="https://www.kingcounty.gov/depts/health/covid-19/vaccine.aspx"
+                    >Kings</a
+                  >,
+                  <a
+                    href="https://www.maderacounty.com/government/public-health/covid-19/covid-vaccination"
+                    >Madera</a
+                  >,
+                  <a
+                    href="http://www.mariposacounty.org/2466/COVID-19-Vaccination"
+                    >Mariposa</a
+                  >,
+                  <a
+                    href="https://www.co.merced.ca.us/CivicAlerts.aspx?AID=1968"
+                    >Merced</a
+                  >,
+                  <a
+                    href="https://covid19.tularecounty.ca.gov/covid-19-vaccine/"
+                    >Tulare</a
+                  >
+                </p>
+                <h3>Region 6</h3>
+                <p>
+                  <a
+                    href="http://www.icphd.org/health-information-and-resources/healthy-facts/covid-19/covid-19-vaccine/"
+                    >Imperial</a
+                  >,
+                  <a
+                    href="https://www.inyocounty.us/covid-19/press-releases/news/inyo-county-covid-19-vaccine-update"
+                    >Inyo</a
+                  >,
+                  <a
+                    href="https://coronavirus.monocounty.ca.gov/pages/vaccinations"
+                    >Mono</a
+                  >,
+                  <a href="https://www.rivcoph.org/coronavirus">Riverside</a>,
+                  <a href="https://sbcovid19.com/vaccine/">San Bernardino</a>,
+                  <a
+                    href="https://www.sandiegocounty.gov/content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV/vaccines/COVID-19-VaxEvents.html"
+                    >San Diego</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <!-- <div id="links">
-        <div id="links-column1">
-          <a href="https://covid-19.acgov.org/vaccines">Alameda</a>
-          <a href="https://alpinecountyca.gov/516/COVID-19">Alpine</a>
-          <a href="https://www.amadorgov.org/services/public-health/covid-19/vaccine-information">Amador</a>
-          <a href="https://www.buttecounty.net/ph/COVID19/vaccine">Butte</a>
-          <a href="https://covid19.calaverasgov.us/">Calaveras</a>
-          <a href="https://www.countyofcolusa.org/949/Vaccine">Colusa</a>
-          <a href="https://www.coronavirus.cchealth.org/vaccine">Contra Costa</a>
-          <a href="https://www.covid19.dnco.org/vaccines">Del Norte</a>
-          <a href="https://www.edcgov.us/Government/hhsa/edccovid-19-vaccine">El Dorado</a>
-          <a href="https://www.co.fresno.ca.us/departments/public-health/covid-19/covid-19-vaccines">Fresno</a>
-          <a
-            href="https://www.countyofglenn.net/dept/health-human-services/public-health/covid-19/covid-19-vaccine-information">Glenn</a>
-          <a href="https://humboldtgov.org/2872/Vaccine-Info">Humboldt</a>
-          <a
-            href="http://www.icphd.org/health-information-and-resources/healthy-facts/covid-19/covid-19-vaccine/">Imperial</a>
-          <a href="https://www.inyocounty.us/covid-19/press-releases/news/inyo-county-covid-19-vaccine-update">Inyo</a>
-          <a href="https://kernpublichealth.com/coronavirus-vaccine/">Kern</a>
-          <a href="https://www.kingcounty.gov/depts/health/covid-19/vaccine.aspx">Kings</a>
-          <a href="http://health.co.lake.ca.us/Coronavirus/Vaccines.htm">Lake</a>
-          <a href="https://lassencares.org/flu-%26-covid19-vaccination">Lassen</a>
-          <a href="http://publichealth.lacounty.gov/media/coronavirus/vaccine/">Los Angeles</a>
-          <a href="https://www.maderacounty.com/government/public-health/covid-19/covid-vaccination">Madera</a>
-          <a href="https://coronavirus.marinhhs.org/vaccine">Marin</a>
-          <a href="http://www.mariposacounty.org/2466/COVID-19-Vaccination">Mariposa</a>
-          <a href="https://www.mendocinocounty.org/community/novel-coronavirus">Mendocino</a>
-          <a href="https://www.co.merced.ca.us/CivicAlerts.aspx?AID=1968">Merced</a>
-          <a href="https://modochealthservices.org/corona-virus">Modoc</a>
-          <a href="https://coronavirus.monocounty.ca.gov/pages/vaccinations">Mono</a>
-        </div>
-        <div id="links-column2">
-          <a
-            href="https://www.co.monterey.ca.us/government/departments-a-h/health/diseases/2019-novel-coronavirus-covid-19/2019-novel-coronavirus-covid-19-vaccines">Monterey</a>
-          <a href="https://www.countyofnapa.org/3096/COVID-19-Vaccines">Napa</a>
-          <a href="https://www.mynevadacounty.com/3148/Get-Vaccine-Information">Nevada</a>
-          <a href="https://occovid19.ochealthinfo.com/covid-19-vaccine-resources">Orange</a>
-          <a href="https://www.placer.ca.gov/6996/Vaccine">Placer</a>
-          <a href="https://www.plumascounty.us/2749/COVID-19-Vaccine">Plumas</a>
-          <a href="https://www.rivcoph.org/coronavirus">Riverside</a>
-          <a href="https://www.saccounty.net/COVID-19/Pages/CoronavirusVaccine.aspx">Sacramento</a>
-          <a href="https://hhsa.cosb.us/covid-19-vaccine-info/">San Benito</a>
-          <a href="https://sbcovid19.com/vaccine/">San Bernardino</a>
-          <a
-            href="https://www.sandiegocounty.gov/content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV/vaccines/COVID-19-VaxEvents.html">San
-            Diego</a>
-          <a href="https://sf.gov/covid-19-vaccine-san-francisco">San Francisco</a>
-          <a href="http://www.sjcphs.org/covid19/COVID19_Vaccine.aspx">San Joaquin</a>
-          <a href="https://www.emergencyslo.org/en/vaccines.aspx">San Luis Obispo</a>
-          <a href="https://www.smchealth.org/covid-19-vaccination">San Mateo</a>
-          <a href="https://publichealthsbc.org/vaccine/">Santa Barbara</a>
-          <a href="https://www.sccgov.org/sites/covid19/Pages/COVID19-vaccine-information-for-public.aspx">Santa
-            Clara</a>
-          <a
-            href="https://www.santacruzhealth.org/HSAHome/HSADivisions/PublicHealth/CommunicableDiseaseControl/CoronavirusHome/Vaccine.aspx">Santa
-            Cruz</a>
-          <a href="https://www.co.shasta.ca.us/ready/covid-19/vaccinations">Shasta</a>
-          <a href="https://sierracounty.ca.gov/616/About-Vaccine-for-COVID-19">Sierra</a>
-          <a href="https://www.co.siskiyou.ca.us/publichealth/page/covid-19-vaccine-information">Siskiyou</a>
-          <a href="https://www.solanocounty.com/depts/ph/coronavirus_links/covid_19_vaccines.asp">Solano</a>
-          <a href="https://socoemergency.org/emergency/novel-coronavirus/vaccine-information/">Sonoma</a>
-          <a href="http://schsa.org/coronavirus/vaccine/">Stanislaus</a>
-          <a href="https://www.suttercounty.org/doc/government/depts/cao/em/coronavirus/coronavirusvaccine">Sutter</a>
-          <a href="https://www.tehamacohealthservices.net/covid-19-vaccine-information/">Tehama</a>
-          <a href="https://www.trinitycounty.org/COVID19-Vaccine">Trinity</a>
-          <a href="https://covid19.tularecounty.ca.gov/covid-19-vaccine/">Tulare</a>
-          <a href="https://www.tuolumnecounty.ca.gov/1319/About-the-COVID-19-Vaccine">Tuolumne</a>
-          <a href="https://www.venturacountyrecovers.org/vaccine-information/">Ventura</a>
-          <a
-            href="https://www.yolocounty.org/health-human-services/adults/communicable-disease-investigation-and-control/novel-coronavirus-2019/coronavirus-vaccine">Yolo</a>
-          <a href="https://www.yuba.org/coronavirus/vaccines.php">Yuba</a>
-        </div>
-      </div> -->
-
     </div>
 
     <footer>
@@ -145,21 +284,30 @@
 
         <p>
           Data is downloaded regularly from the
-          <a href="https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/COVID-19/VaccineDoses.aspx">California Department of
-            Public Health - Vaccine Doses</a>
+          <a
+            href="https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/COVID-19/VaccineDoses.aspx"
+            >California Department of Public Health - Vaccine Doses</a
+          >
           web page.
         </p>
 
         <p>
           Vaccine information at the county level can be found
           <a
-            href="https://github.com/electronicwhisper/ca-vaccine.com/blob/main/county-vaccination-website-links.csv">here.</a>
+            href="https://github.com/electronicwhisper/ca-vaccine.com/blob/main/county-vaccination-website-links.csv"
+            >here.</a
+          >
         </p>
         <p>
           You can download the
-          <a href="https://github.com/electronicwhisper/ca-vaccine.com/blob/main/cdph-data.csv">raw data</a>
+          <a
+            href="https://github.com/electronicwhisper/ca-vaccine.com/blob/main/cdph-data.csv"
+            >raw data</a
+          >
           and
-          <a href="https://github.com/electronicwhisper/ca-vaccine.com">source code</a>
+          <a href="https://github.com/electronicwhisper/ca-vaccine.com"
+            >source code</a
+          >
           for this site.
         </p>
       </div>
@@ -167,6 +315,5 @@
 
     <script src="d3/d3.js"></script>
     <script src="index.js"></script>
-</body>
-
+  </body>
 </html>
