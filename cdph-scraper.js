@@ -34,14 +34,14 @@ const run = async () => {
     }
   });
 
-  fs.readFile("cdph-data.csv", "utf8", (err, data) => {
+  fs.readFile("data/cdph-doses.csv", "utf8", (err, data) => {
     if (err) throw err;
     const arrayOfData = data.split("\n");
     const lastLine = arrayOfData[arrayOfData.length - 1];
     const lastDate = lastLine.split(",")[0];
     const newData = "\n" + reformattedAsOfDate + "," + arrayOfDoses.join(",");
     if (lastDate !== reformattedAsOfDate) {
-      fs.appendFile("cdph-data.csv", newData, (err) => {
+      fs.appendFile("data/cdph-doses.csv", newData, (err) => {
         if (err) throw err;
         console.log('The "data to append" was appended to file!');
       });
