@@ -7,15 +7,23 @@
   <title>California COVID-19 Vaccine Tracker</title>
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="index.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+  </style>
   <script src="plotly-latest.min.js"></script>
 </head>
 
 <body>
   <div id="page-container">
     <div id="top">
-      <p class="title">
-        California Coronavirus (COVID-19) Vaccination Tracker
-      </p>
+      <div id="logo-and-title">
+        <div>
+          <img src="logo.png" id="logo">
+        </div>
+        <div id="title">
+          <p>California Coronavirus Vaccine Tracker</p>
+        </div>
+      </div>
     </div>
     <div id="content">
       <!-- Region Total -->
@@ -33,7 +41,7 @@
 
         <div class="chart-container">
           <div class="chart-title">
-            Cumulative COVID-19 vaccination doses administered in California
+            Cumulative COVID-19 vaccine doses administered in California
           </div>
           <div class="chart-cumulative"></div>
         </div>
@@ -44,7 +52,7 @@
 
         <div class="chart-container">
           <div class="chart-title">
-            Daily rate of new COVID-19 vaccination doses administered in
+            Daily rate of new COVID-19 vaccine doses administered in
             California
           </div>
           <div class="chart-daily-rate"></div>
@@ -55,7 +63,7 @@
 
         <div class="chart-container">
           <div class="chart-title">
-            Cumulative COVID-19 vaccination doses per 100 people by region
+            Cumulative COVID-19 vaccine doses per 100 people by region
           </div>
           <div class="chart-regions"></div>
           <div id="map-and-region-list">

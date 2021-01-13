@@ -51,13 +51,34 @@ ul {
 
 #top {
   background-color: #00a3b8;
-  padding: 16px 32px;
+  padding: 8px 32px;
   color: #e1f3f3;
 }
-.title {
-  font-size: 24px;
+
+#logo-and-title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#logo {
+  padding-right: 16px;
+}
+
+#title {
   margin: 0;
-  font-weight: bold;
+  font-family: "Fredoka One", cursive;
+}
+
+#title p {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1;
+}
+
+#logo {
+  width: 90px;
+  margin: 0 auto;
 }
 
 #content {
@@ -69,6 +90,7 @@ ul {
 .headline {
   margin: 24px 0;
 }
+
 .sub-title {
   font-size: 32px;
   margin: 24px 0;
@@ -153,7 +175,7 @@ ul {
 footer {
   margin-top: 16px;
   padding: 32px;
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 footer p {
