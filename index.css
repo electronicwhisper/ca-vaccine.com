@@ -51,7 +51,6 @@ ul {
 
 #top {
   background-color: #00a3b8;
-  padding: 8px 32px;
   color: #e1f3f3;
 }
 
@@ -59,6 +58,9 @@ ul {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  max-width: 1600px;
+  padding: 8px 32px;
+  margin: 0 auto;
 }
 
 #title {
@@ -196,7 +198,7 @@ footer p {
 }
 
 @media only screen and (max-width: 768px) {
-  #top,
+  #logo-and-title,
   #content,
   #map-and-region-list {
     padding: 16px;
@@ -227,7 +229,7 @@ footer p {
 }
 
 @media only screen and (max-width: 500px) {
-  #top,
+  #logo-and-title,
   #content,
   #map-and-region-list {
     padding: 8px;
