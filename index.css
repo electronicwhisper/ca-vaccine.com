@@ -61,10 +61,6 @@ ul {
   justify-content: flex-start;
 }
 
-#logo {
-  padding-right: 16px;
-}
-
 #title {
   margin: 0;
   font-family: "Fredoka One", cursive;
@@ -79,6 +75,8 @@ ul {
 #logo {
   width: 90px;
   margin: 0 auto;
+  padding-top: 3px;
+  padding-right: 16px;
 }
 
 #content {
