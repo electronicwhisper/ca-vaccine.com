@@ -16,7 +16,7 @@ const run = async () => {
   tables.forEach((table) => {
     if (table.innerHTML.includes("Total Doses Administered")) {
       const tds = Array.from(table.querySelectorAll("td:nth-child(2)"));
-      arrayOfDoses = tds.map((td) => td.textContent.replace(",", ""));
+      arrayOfDoses = tds.map((td) => td.textContent.replace(/,/g, ""));
     }
   });
 
